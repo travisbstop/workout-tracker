@@ -1,8 +1,8 @@
 -- this script initializes the db and populates it with test data
 
-CREATE DATABASE test_db_1;
+CREATE DATABASE workout_tracker_postgres;
 
-\c test_db_1
+\c workout_tracker_postgres
 
 CREATE TABLE exercises (
     exercise_id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
