@@ -1,0 +1,10 @@
+docker run --name workout-tracker-postgres -e POSTGRES_PASSWORD=password -p 5431:5432 -d postgres
+^ create docker container using postgres image, environmental variable "POSTGRES_PASSWORD" set to password, port 5432 mapped to 5431 so if you have postgres running locally it doesn't conflict
+
+docker exec -it workout-tracker-postgres psql -U postgres
+^ starts interactive session with psql command and username postgres
+
+cat init_db.sql | docker exec -i workout-tracker-postgres psql -h localhost -U postgres -f-
+^ feeds contents of sql file into docker and runs script
+
+echo "DROP DATABASE test_db_1;" | docker exec -i workout-tracker-postgres psql -h localhost -U postgres -f-
