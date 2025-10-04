@@ -1,7 +1,6 @@
-import sql from "@/datalayer/postgres-config";
 import { getExercises } from "@/datalayer/queries";
 
-export default async function Home() {
+export default async function Exercises() {
   const { results: exercises, error } = await getExercises();
 
   if (error) {
