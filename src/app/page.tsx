@@ -1,14 +1,9 @@
-import sql from "@/datalayer/postgres-config";
-import { getExercises } from "@/datalayer/queries";
+import Link from "next/link";
 
 export default async function Home() {
-  const { results: exercises, error } = await getExercises();
-
-  if (error) {
-    return <div>database error occurred</div>;
-  }
-
   return (
-    <div>{exercises.map((exercise) => `${exercise.exercise_name}, `)}</div>
+    <div>
+      <Link href="/admin">Admin</Link>
+    </div>
   );
 }

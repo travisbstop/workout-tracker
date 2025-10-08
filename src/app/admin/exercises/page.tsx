@@ -1,3 +1,4 @@
+import Button from "@/components/button";
 import { getExercises } from "@/datalayer/queries";
 
 export default async function Exercises() {
@@ -8,6 +9,8 @@ export default async function Exercises() {
   }
 
   return (
-    <div>{exercises.map((exercise) => `${exercise.exercise_name}, `)}</div>
+    <div>
+      <Button>This is a button</Button>
+    </div>
   );
 }
